@@ -131,6 +131,11 @@ mySection{
   padding-bottom: 2rem;
 }
 
+.section-contact{
+  text-align: center;
+  margin: 10px;
+}
+
 /*===== LAYOUT =====*/
 .bd-grid{
   max-width: 1024px;
@@ -249,6 +254,8 @@ mySection{
   bottom: 0;
   top: 63%;
   width: 200px;
+  height: 300px;
+  border-radius: 50%;
   
 }
 
@@ -260,6 +267,7 @@ mySection{
   padding: .75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: .5rem;
+  margin-top: 20px;
 }
 .button:hover{
   box-shadow: 0 10px 36px rgba(0,0,0,.15);
@@ -277,8 +285,13 @@ mySection{
   justify-self: center;
 }
 .about__img img{
-  width: 200px;
-  border-radius: .5rem;
+  width: 300px;
+  height: 600px;
+  border-radius: 50%;
+}
+.about__text{
+  letter-spacing: 2px;
+  line-height: 1.8;
 }
 
 /* ===== SKILLS =====*/
@@ -291,6 +304,8 @@ mySection{
 }
 .skills__text{
   margin-bottom: var(--mb-4);
+  letter-spacing: 2px;
+  line-height: 1.8;
 }
 .skills__data{
   display: flex;
@@ -307,6 +322,12 @@ mySection{
   font-size: 2rem;
   margin-right: var(--mb-2);
   color: var(--first-color);
+}
+.icon{
+  font-size: 2rem;
+  margin-right: var(--mb-2);
+  /* background-color: var(--first-color); */
+  width: 30px;
 }
 .skills__names{
   display: flex;
@@ -325,10 +346,10 @@ mySection{
   width: 95%;
 }
 .skills__css{
-  width: 85%;
+  width: 90%;
 }
 .skills__js{
-  width: 65%;
+  width: 90%;
 }
 .skills__ux{
   width: 85%;
