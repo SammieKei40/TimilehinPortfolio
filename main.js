@@ -63,21 +63,33 @@ var name = document.getElementById('na').value
         var email = document.getElementById('em').value
 document.querySelector("#messageForm").addEventListener("submit", async e => { // When the user submits the form
     e.preventDefault(); // Don't submit
-    let text = JSON.stringify( // Convert the form data to a string to send as our Telegram message
-        Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
-    null, 2); // Prettify the JSON so we can read the data easily
-    console.log(text)
+    var name = document.getElementById('na').value
+      var email = document.getElementById('em').value
+      var phone = document.getElementById('ph').value
+      var message = document.getElementById('mess').value
+    let text = `Contact Message: - Name: ${name} Email: ${email} Phone: ${phone} Message: ${message}`
+   
     const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
         method: 'POST',
         headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
         body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
     });
+
     const messageStatus = document.querySelector('#status');
-    if (sendMessage.ok) // Update the user on if the message went through
+    if (sendMessage.status == "200"){ // Update the user on if the message went through
+        setTimeout(function(){
+            messageStatus.style.cssText = "display: none"
+        }, 3000);
         messageStatus.textContent = "Message Sent!";
-        // alert("Message sent")
-    else
-    // alert("Message failed")
-        messageStatus.textContent = "Message Failed to send "
-    e.target.reset(); // Clear the form fields.
+        messageStatus.style.cssText = "color: green"
+        
+        } else if(sendMessage.status == "404"){
+            setTimeout(function(){
+                messageStatus.style.cssText = "display: none"
+            }, 3000);
+            messageStatus.textContent = "Message Failed to send "
+            messageStatus.style.cssText = "color: red"}
+        e.target.reset(); // Clear the form fields.
 });
+
+

@@ -245,10 +245,11 @@
                             <p><a href="#">(+234)8089058458</a></p>
                 </section>
 
-                <div class="contact__container bd-grid" id="messageForm">
-                    <form  class="contact__form" >
+                <div class="contact__container bd-grid" >
+                    <form  class="contact__form" ref="contactForm" id="messageForm">
                         <input type="text" id="na" placeholder="Name" class="contact__input" required>
                         <input type="email" id="em" placeholder="Email" class="contact__input" required>
+                        <input type="number" id="ph" placeholder="Phone Number" class="contact__input" required>
                         <textarea name="" id="mess" placeholder="Message" cols="0" rows="10" class="contact__input" required></textarea>
                         <input type="submit" value="Submit" class="contact__button button">
                         <p id="status"></p>
